@@ -1,0 +1,57 @@
+<!-- Jody Willems -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script id="script" src="toadSound.js" ></script> 
+    <link rel="stylesheet" href="myStyle2.css">
+    
+    
+</head>
+<body>
+    
+    <h1 id="toads">Shhhhh!</h1>
+
+    <p>Want to know a secret?</p>
+    <button type="button" onclick="document.getElementById('secret').innerHTML = 'Register below for the secret!'">Yes, I do</button><br><br>
+    <p id="secret"></p>
+
+    <!-- I got rid of the 'error' part of the input fields and used 'alert' messages instead since it was more time efficient-->
+  <div class="container">
+        <form id="form" onsubmit="verifyUser()">
+            <h1>Register</h1>
+            <div class="input-control">
+                <label for="first" required>First Name:</label>
+                <input type="text" id="first" name="first"/>
+            </div>
+            <br>
+            <div class="input-control">
+                <label for="last" required>Last Name:</label>
+                <input type="text" id="last" name="last"/>
+            </div>
+            <br>
+            <div class="input-control">
+                <label for="zip" required>Zipcode:</label>
+                <input type="text" id="zip" name="zip"/>
+            </div>
+            <br>
+            <input type="submit" value="Tell Me"/>
+        </form> 
+    </div>
+    <br>
+
+    <!--This hidden element automatically plays a saved MP3 file upon page load.
+        HOWEVER, google Chrome and Microsoft Edge do not support the Autoplay attribute and must be played manually
+        on a displayed audio control panel. The only way I got this working was with Firefox and manually allowing autoplay
+        via the browser tab (shown in screenshot)-->
+    <audio src="croaks.mp3" type="audio/mp3" preload="auto" style="display:none" controls loop autoplay></audio>
+
+    <br>
+    <br>
+    <br>
+
+</body>
+</HTML>
+
